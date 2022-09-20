@@ -56,7 +56,6 @@ const SkillCard = ({ name, image, link, description }:{name:string,image:any,lin
                   src={image}
                   height={26}
                   width={26}
-                  layout="fixed"
                   rounded="md"
                 />
               )}

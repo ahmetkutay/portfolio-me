@@ -18,11 +18,11 @@ import Section from "../../Components/section";
 import { AiTwotoneThunderbolt, AiOutlineCloudServer } from "react-icons/ai";
 import { BiDesktop } from "react-icons/bi";
 import { GiSpiderWeb } from "react-icons/gi";
-import SkillCard from "./skill-card.tsx";
-import { skills } from "data/data";
-import Header from "./header";
-import { MotionBox } from "./motion";
-import { container } from "./page-transitions";
+import SkillCard from "../../Components/skill-card";
+import { skills } from "../../data/data";
+import Header from "../../Components/header";
+import { MotionBox } from "../../Components/motion";
+import { container } from "../../Components/pate-transitions";
 
 const TechStack = () => {
     const [skillsList, setSkillsList] = useState([]);
