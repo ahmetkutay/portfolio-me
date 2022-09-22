@@ -1,12 +1,9 @@
 import React from "react";
 import {
     FaGithub,
-    FaDev,
     FaLinkedin,
-    FaQuora,
     FaTwitter
 } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
 
 const siteConfig = {
     copyright: `Copyright © ${new Date().getFullYear()} Ahmet Kutay Karacair. All Rights Reserved.`,

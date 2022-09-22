@@ -1,6 +1,6 @@
 import self from "../../../Images/self.jpg"
 
-export let colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
+export let colors = ["rgb(159,159,159)", "rgb(0,0,0)"];
 
 export const info = {
     firstName: "Ahmet Kutay",
@@ -78,15 +78,19 @@ export const info = {
         {
             label: 'cooking',
             emoji: '🌶'
-        }
-
-    ],
-    /*portfolio: [ // This is where your portfolio projects will be detailed
+        },
         {
-            title: "Project 1",
-            live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-            source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
-            image: mock1
+            label: 'GYM',
+            emoji: '💪🏼'
+        },
+        {
+            label: 'Football',
+            emoji: '⚽'
         }
-    ]*/
+        ,
+        {
+            label: 'Computer Programming',
+            emoji: '👨‍💻'
+        }
+    ]
 }

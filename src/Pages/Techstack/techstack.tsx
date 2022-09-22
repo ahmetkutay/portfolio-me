@@ -16,8 +16,9 @@ import {
 import { PageSlideFade } from "../../Components/pate-transitions";
 import Section from "../../Components/section";
 import { AiTwotoneThunderbolt, AiOutlineCloudServer } from "react-icons/ai";
-import { BiDesktop } from "react-icons/bi";
+import { BiDesktop, BiMessageAltDetail, BiCode } from "react-icons/bi";
 import { GiSpiderWeb } from "react-icons/gi";
+import { FiDatabase } from "react-icons/fi";
 import SkillCard from "../../Components/skill-card";
 import { skills } from "../../data/data";
 import Header from "../../Components/header";
@@ -25,14 +26,13 @@ import { MotionBox } from "../../Components/motion";
 import { container } from "../../Components/pate-transitions";
 
 const TechStack = () => {
-    const [skillsList, setSkillsList] = useState([]);
+    const [skillsList, setSkillsList]:any = useState([]);
 
     React.useEffect(() => {
         setSkillsList(skills);
     }, []);
 
-    const filterSkills = tab => {
-        console.log(skills.filter(skill => skill.type === tab));
+    const filterSkills = (tab:any) => {
         if (tab.length) setSkillsList(skills.filter(skill => skill.type === tab));
         else setSkillsList(skills);
     };
@@ -42,7 +42,7 @@ const TechStack = () => {
             <VStack spacing={8}>
                 <Section>
                     <VStack>
-                        <Header mt={0} mb={1}>
+                        <Header mt={0} mb={1} underlineColor={"null"}>
                             Tech Stack
                         </Header>
                         <Text
@@ -76,7 +76,7 @@ const TechStack = () => {
                                 onClick={() => filterSkills("")}
                             >
                                 <HStack spacing={1}>
-                                    <Icon as={AiTwotoneThunderbolt} weight="fill" />
+                                    <Icon as={AiTwotoneThunderbolt} height="fill" />
                                     <Text>All</Text>
                                 </HStack>
                             </Tab>
@@ -92,7 +92,7 @@ const TechStack = () => {
                                 onClick={() => filterSkills("development")}
                             >
                                 <HStack spacing={1}>
-                                    <Icon as={BiDesktop} weight="fill" />
+                                    <Icon as={BiDesktop} height="fill" />
                                     <Text>Web Development</Text>
                                 </HStack>
                             </Tab>
@@ -108,7 +108,7 @@ const TechStack = () => {
                                 onClick={() => filterSkills("design")}
                             >
                                 <HStack spacing={1}>
-                                    <Icon as={GiSpiderWeb} weight="fill" />
+                                    <Icon as={GiSpiderWeb} height="fill" />
                                     <Text>Web Design</Text>
                                 </HStack>
                             </Tab>
@@ -124,8 +124,56 @@ const TechStack = () => {
                                 onClick={() => filterSkills("devops")}
                             >
                                 <HStack spacing={1}>
-                                    <Icon as={AiOutlineCloudServer} weight="fill" />
+                                    <Icon as={AiOutlineCloudServer} height="fill" />
                                     <Text>Devops</Text>
+                                </HStack>
+                            </Tab>
+                            <Tab
+                                bg={useColorModeValue("gray.100", "gray.800")}
+                                color={useColorModeValue("gray.600", "gray.500")}
+                                _selected={{
+                                    color: "red.800",
+                                    bg: "red.100"
+                                }}
+                                mr={2}
+                                mt={2}
+                                onClick={() => filterSkills("Database")}
+                            >
+                                <HStack spacing={1}>
+                                    <Icon as={FiDatabase} height="fill" />
+                                    <Text>Database</Text>
+                                </HStack>
+                            </Tab>
+                            <Tab
+                                bg={useColorModeValue("gray.100", "gray.800")}
+                                color={useColorModeValue("gray.600", "gray.500")}
+                                _selected={{
+                                    color: "red.800",
+                                    bg: "red.100"
+                                }}
+                                mr={2}
+                                mt={2}
+                                onClick={() => filterSkills("Communication")}
+                            >
+                                <HStack spacing={1}>
+                                    <Icon as={BiMessageAltDetail} height="fill" />
+                                    <Text>Communication</Text>
+                                </HStack>
+                            </Tab>
+                            <Tab
+                                bg={useColorModeValue("gray.100", "gray.800")}
+                                color={useColorModeValue("gray.600", "gray.500")}
+                                _selected={{
+                                    color: "red.800",
+                                    bg: "red.100"
+                                }}
+                                mr={2}
+                                mt={2}
+                                onClick={() => filterSkills("Development")}
+                            >
+                                <HStack spacing={1}>
+                                    <Icon as={BiCode} height="fill" />
+                                    <Text>Development</Text>
                                 </HStack>
                             </Tab>
                         </TabList>
@@ -137,13 +185,13 @@ const TechStack = () => {
                                     animate="visible"
                                 >
                                     <SimpleGrid columns={[1, 1, 2]} spacing={4} mt={8}>
-                                        {skillsList.map((tool, index) => (
+                                        {skillsList.map((tool:any, index:any) => (
                                             <SkillCard
                                                 key={index}
                                                 name={tool.name}
                                                 description={tool.description}
                                                 image={tool.image}
-                                                platform={"web"}
+                                                //platform={"web"}
                                                 link={tool.link}
                                             />
                                         ))}
@@ -157,13 +205,13 @@ const TechStack = () => {
                                     animate="visible"
                                 >
                                     <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
-                                        {skillsList.map((tool, index) => (
+                                        {skillsList.map((tool:any, index:any) => (
                                             <SkillCard
                                                 key={index}
                                                 name={tool.name}
                                                 description={tool.description}
                                                 image={tool.image}
-                                                platform={"web"}
+                                               // platform={"web"}
                                                 link={tool.link}
                                             />
                                         ))}
@@ -177,13 +225,13 @@ const TechStack = () => {
                                     animate="visible"
                                 >
                                     <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
-                                        {skillsList.map((tool, index) => (
+                                        {skillsList.map((tool:any, index:any) => (
                                             <SkillCard
                                                 key={index}
                                                 name={tool.name}
                                                 description={tool.description}
                                                 image={tool.image}
-                                                platform={"web"}
+                                                //platform={"web"}
                                                 link={tool.link}
                                             />
                                         ))}
@@ -197,13 +245,73 @@ const TechStack = () => {
                                     animate="visible"
                                 >
                                     <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
-                                        {skillsList.map((tool, index) => (
+                                        {skillsList.map((tool:any, index:any) => (
                                             <SkillCard
                                                 key={index}
                                                 name={tool.name}
                                                 description={tool.description}
                                                 image={tool.image}
-                                                platform={"web"}
+                                                //platform={"web"}
+                                                link={tool.link}
+                                            />
+                                        ))}
+                                    </SimpleGrid>
+                                </MotionBox>
+                            </TabPanel>
+                            <TabPanel px={0}>
+                                <MotionBox
+                                    variants={container}
+                                    initial="hidden"
+                                    animate="visible"
+                                >
+                                    <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                                        {skillsList.map((tool:any, index:any) => (
+                                            <SkillCard
+                                                key={index}
+                                                name={tool.name}
+                                                description={tool.description}
+                                                image={tool.image}
+                                                //platform={"web"}
+                                                link={tool.link}
+                                            />
+                                        ))}
+                                    </SimpleGrid>
+                                </MotionBox>
+                            </TabPanel>
+                            <TabPanel px={0}>
+                                <MotionBox
+                                    variants={container}
+                                    initial="hidden"
+                                    animate="visible"
+                                >
+                                    <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                                        {skillsList.map((tool:any, index:any) => (
+                                            <SkillCard
+                                                key={index}
+                                                name={tool.name}
+                                                description={tool.description}
+                                                image={tool.image}
+                                                //platform={"web"}
+                                                link={tool.link}
+                                            />
+                                        ))}
+                                    </SimpleGrid>
+                                </MotionBox>
+                            </TabPanel>
+                            <TabPanel px={0}>
+                                <MotionBox
+                                    variants={container}
+                                    initial="hidden"
+                                    animate="visible"
+                                >
+                                    <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                                        {skillsList.map((tool:any, index:any) => (
+                                            <SkillCard
+                                                key={index}
+                                                name={tool.name}
+                                                description={tool.description}
+                                                image={tool.image}
+                                                //platform={"web"}
                                                 link={tool.link}
                                             />
                                         ))}

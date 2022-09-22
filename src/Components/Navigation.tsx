@@ -1,43 +1,27 @@
 import * as React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import About from "../Pages/About/about";
-import Posts from "./blog/posts";
-import RepositoriesList from "./repositories-list";
-import Home from "./home";
-import TechStack from "./tech-stack";
-import Achievements from "./achievements";
-import NotebookPost from "./blog/notebook-app/notebook-post";
-import MyStory from "./my-story";
+import RepositoriesList from "../Pages/OpenSource/repoList";
+import {Homepage} from "../Pages/HomePage/homepage";
+import TechStack from "../Pages/Techstack/techstack";
+import MyStory from "../Pages/StoryLine/my-story";
 
 const routes = [
-    { path: "/", exact: true, name: "Home", component: Home },
+    { path: "/", exact: true, name: "Home", component: Homepage },
     { path: "/about", exact: true, name: "About", component: About },
-    {
-        path: "/achievements",
-        exact: true,
-        name: "Achievements",
-        component: Achievements
-    },
-    {
-        path: "/blog/notebook-app",
-        exact: true,
-        name: "Post",
-        component: NotebookPost
-    },
     {
         path: "/open-source",
         exact: true,
         name: "OpenSource",
         component: RepositoriesList
     },
-    { path: "/blog", exact: true, name: "Blog", component: Posts },
     { path: "/tech-stack", exact: true, name: "Tools", component: TechStack },
     { path: "/story-timeline", exact: true, name: "My Story", component: MyStory }
 
 ];
 const Navigation = () => {
     return (
-        <Switch>
+        <>
             {routes.map((route, idx) => (
                 <Route
                     key={idx}
@@ -46,8 +30,8 @@ const Navigation = () => {
                     render={(props:any) => <route.component {...props} />}
                 />
             ))}
-            <Redirect to="/" />
-        </Switch>
+            <Link to="/" />
+        </>
     );
 };
 

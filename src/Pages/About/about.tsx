@@ -10,41 +10,53 @@ export default function About() {
 
     function aboutMeText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cat
-                about{firstName} </p>
-            <p><span style={{color: info.baseColor}}>about{firstName} <span
-                className={Style.green}>(main)</span> $ </span>
-                {info.bio}
+            <p><span style={{color: info.baseColor, fontWeight:"bold"}}>{firstName} {info.lastName.toLowerCase()} $</span>
+                <span className={Style.text}> cat about {firstName} </span> </p>
+            <p><span style={{color: info.baseColor, fontWeight:"bold"}}>about {firstName}
+                <span className={Style.green}> (main)</span> $ </span>
+                <span className={Style.text}>{info.bio}</span>
             </p>
         </>;
     }
 
     function skillsText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd skills/tools
+            <p><span style={{color: info.baseColor, fontWeight:"bold"}}>{firstName} {info.lastName.toLowerCase()} $</span>
+                <span className={Style.text}> cd skills/tools </span>
             </p>
-            <p><span style={{color: info.baseColor}}>skills/tools <span
-                className={Style.green}>(main)</span> $</span> ls</p>
-            <p style={{color: info.baseColor}}> Proficient With</p>
+            <p><span style={{color: info.baseColor, fontWeight:"bold"}}>skills/tools <span
+                className={Style.green}>(main)</span> $</span>
+                <span className={Style.text}> ls </span> </p>
+            <p style={{color: info.baseColor, fontWeight:"bold"}}> Proficient With</p>
             <ul className={Style.skills}>
-                {info.skills.proficientWith.map((proficiency, index) => <li key={index}>{proficiency}</li>)}
+                {info.skills.proficientWith.map((proficiency, index) => <li key={index} style={{
+                    color: "#0C0C0C",
+                    fontWeight: "bold"
+                }}>{proficiency}</li>)}
             </ul>
-            <p style={{color: info.baseColor}}> Exposed To</p>
+            <p style={{color: info.baseColor, fontWeight:"bold"}}> Exposed To</p>
             <ul className={Style.skills}>
-                {info.skills.exposedTo.map((skill, index) => <li key={index}>{skill}</li>)}
+                {info.skills.exposedTo.map((skill, index) => <li key={index} style={{
+                    color: "#0C0C0C",
+                    fontWeight: "bold"
+                }}>{skill}</li>)}
             </ul>
         </>;
     }
 
     function miscText() {
         return <>
-            <p><span style={{color: info.baseColor}}>{firstName}{info.lastName.toLowerCase()} $</span> cd
-                hobbies/interests</p>
-            <p><span style={{color: info.baseColor}}>hobbies/interests <span
-                className={Style.green}>(main)</span> $</span> ls</p>
+            <p><span style={{color: info.baseColor, fontWeight:"bold"}}>{firstName} {info.lastName.toLowerCase()} $</span>
+                <span className={Style.text}> cd hobbies/interests </span> </p>
+            <p><span style={{color: info.baseColor, fontWeight:"bold"}}>hobbies/interests <span
+                className={Style.green}>(main)</span> $</span>
+                <span className={Style.text}> ls </span> </p>
             <ul>
                 {info.hobbies.map((hobby, index) => (
-                    <li key={index}><Box component={'span'} mr={'1rem'}>{hobby.emoji}</Box>{hobby.label}</li>
+                    <li key={index} style={{
+                        color: "#0C0C0C",
+                        fontWeight: "bold"
+                    }}><Box component={'span'} mr={'1rem'}>{hobby.emoji}</Box>{hobby.label}</li>
                 ))}
             </ul>
         </>;
