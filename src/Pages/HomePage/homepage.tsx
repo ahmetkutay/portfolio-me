@@ -1,6 +1,6 @@
 import React from 'react';
 import './homepage.css'
-import {FontAwesomeInpm i --save @fortawesome/fontawesome-svg-core con} from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCode, faHouseFlag, faPaperPlane} from '@fortawesome/free-solid-svg-icons'
 
 export const Homepage = () => {
