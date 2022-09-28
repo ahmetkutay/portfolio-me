@@ -50,15 +50,16 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
     let place:any = index % (isMobile ? 1 : 2) === 0 ? "right" : "left";
 
     return (
-        <Flex minH={20} {...props}>
+        <Flex minH={10} {...props}>
             <Flex flexDir="column" alignItems={"center"} minHeight={isMobile?"15rem":"10rem"} mr={4}>
                 <Popover
-                    returnFocusOnClose={false}
+                    returnFocusOnClose={true}
                     isOpen={isOpen}
                     onClose={close}
                     placement={place}
-                    closeOnBlur={false}
+                    closeOnBlur={true}
                     variant="responsive"
+                    autoFocus={false}
                 >
                     <PopoverTrigger>
                         <Box onClick={open} position="relative" >

@@ -8,7 +8,6 @@ import {
 import { motion, isValidMotionProp } from "framer-motion";
 import placeholder from "../assets/images/placeholder.png";
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import { useRef } from "react";
 
 const animationKeyframes = keyframes`
   0% {

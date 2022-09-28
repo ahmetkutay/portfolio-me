@@ -2,7 +2,7 @@ import * as React from "react";
 import { Route, Link } from "react-router-dom";
 import About from "../Pages/About/about";
 import RepositoriesList from "../Pages/OpenSource/repoList";
-import {Homepage} from "../Pages/HomePage/homepage";
+import Homepage from "../Pages/HomePage/homepage";
 import TechStack from "../Pages/Techstack/techstack";
 import MyStory from "../Pages/StoryLine/my-story";
 

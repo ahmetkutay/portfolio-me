@@ -69,7 +69,7 @@ It is a chronological display of the companies I have worked for so far or the s
                             <Text fontSize={[12, 13, 15]}>{company.role}</Text>
                         </StoryTimeline>
                     ))}
-                    <StoryTimeline year={"2017"} index={0} />
+                    <StoryTimeline year={"2020"} index={0} />
                     {institutes.map((institute, index) => (
                         <>
                             <StoryTimeline
