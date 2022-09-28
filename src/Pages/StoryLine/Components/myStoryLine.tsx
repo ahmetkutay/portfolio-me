@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     Box,
     BoxProps,
@@ -30,15 +30,28 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
     children,
     ...props
 }) => {
+    const [width, setWidth] = useState<number>(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    const isMobile = width <= 768;
     const [isOpen, setIsOpen] = React.useState(true);
     const open = () => setIsOpen(!isOpen);
     const close = () => setIsOpen(false);
     const color = useColorModeValue("gray.700", "gray.200");
-    let place:any = index % 2 === 0 ? "right" : "left";
+    let place:any = index % (isMobile ? 1 : 2) === 0 ? "right" : "left";
 
     return (
         <Flex minH={20} {...props}>
-            <Flex flexDir="column" alignItems={"center"} minHeight={"8rem"} mr={4}>
+            <Flex flexDir="column" alignItems={"center"} minHeight={isMobile?"15rem":"10rem"} mr={4}>
                 <Popover
                     returnFocusOnClose={false}
                     isOpen={isOpen}
@@ -80,7 +93,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({
                     </PopoverTrigger>
                     <Box fontSize={15}>
                         {!year && (
-                            <PopoverContent padding={["0.2rem", "0.2rem", "0.7rem"]}>
+                            <PopoverContent padding={["0.2rem", "0.2rem", "0.7rem"]} width={["9.3rem", "13rem", "15rem", "100%"]} >
                                 <PopoverArrow/>
                                 <PopoverBody>
                                     <Box overflow="hidden">{children}</Box>

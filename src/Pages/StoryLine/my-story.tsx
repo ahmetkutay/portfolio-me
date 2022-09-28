@@ -16,6 +16,7 @@ import { companies, institutes } from "../../data/data";
 import Header from "../../Components/header";
 import Section from "../../Components/section";
 import { PageSlideFade } from "../../Components/pate-transitions";
+import { MotionArrow } from "../../Components/motion";
 
 const MyStory = () => {
 
@@ -27,20 +28,16 @@ const MyStory = () => {
                         <Header mt={0} mb={1} underlineColor={"null"}>
                             Developer Story
                         </Header>
-                        {/* <Text
-              fontSize={"xl"}
-              color={useColorModeValue("gray.500", "gray.200")}
-              maxW="lg"
-              textAlign="center"
-            >
-              This page tells you my story in timeline shape.
-            </Text> */}
+                        <Text>
+It is a chronological display of the companies I have worked for so far or the schools I have graduated from
+</Text>
                     </VStack>
+<MotionArrow />
                 </PageSlideFade>
             </Section>
             <VStack textAlign="start" align="flex-start" mb={0}>
                 <Box>
-                    <StoryTimeline year={"2021"} index={0} />
+                    <StoryTimeline year={new Date().getFullYear().toString()} index={0} />
                     {companies.map((company, index) => (
                         <StoryTimeline
                             icon={BsFillBriefcaseFill}

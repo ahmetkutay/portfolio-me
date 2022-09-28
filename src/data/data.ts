@@ -31,7 +31,7 @@ export const companies = [
     {
         title: "Orion Innovation",
         alt: "PS image",
-        role: "Senior Software Engineer",
+        role: "Software Engineer",
         skills: ["php", "angular", "typescript", "javascript", "react"],
         period: "December 2021 - Present",
         logo: orionInnovation
