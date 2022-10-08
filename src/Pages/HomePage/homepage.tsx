@@ -118,10 +118,7 @@ const HomePage = () => {
               </ListItem>
             <ListItem>
                 <Link as={NavLink} to="/open-source">
-                  Live/Local Github Repos
-                  <Badge ml="1" colorScheme="green">
-                    New
-                  </Badge>
+                  Github Repos
                 </Link>
               </ListItem>
               <ListItem>
