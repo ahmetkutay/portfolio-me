@@ -31,9 +31,17 @@ export const companies = [
     {
         title: "Orion Innovation",
         alt: "PS image",
+        role: "DevOps Engineer",
+        skills: ["Redmine", "Helpdesk", "Jenkins", "Rust", "Nodejs","Python","Sonarqube","Gitlab"],
+        period: "August 2023 - Present",
+        logo: orionInnovation
+    },
+    {
+        title: "Orion Innovation",
+        alt: "PS image",
         role: "Software Engineer",
         skills: ["php", "angular", "typescript", "javascript", "react"],
-        period: "December 2021 - Present",
+        period: "December 2021 - August 2023",
         logo: orionInnovation
     },
     {
